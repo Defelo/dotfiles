@@ -1,2 +1,3 @@
 *.enc filter=git-crypt diff=git-crypt
 /.i3scripts/shorten.py filter=git-crypt diff=git-crypt
+/.i3scripts/wtr.sh filter=git-crypt diff=git-crypt
