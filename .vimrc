@@ -17,7 +17,7 @@ endif
 
 
 " Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -92,11 +92,4 @@ autocmd FileType yaml setlocal shiftwidth=2
 autocmd FileType text setlocal textwidth=0
 autocmd FileType text setlocal wrapmargin=0
 
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'lervag/vimtex'
-
-" Initialize plugin system
-call plug#end()
-
+source ~/.vim/custom.vim
