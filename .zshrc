@@ -165,6 +165,7 @@ pydrocsid_update() {
 
 mdlint() { docker run --rm -v $(pwd):/repo:ro avtodev/markdown-lint:v1 --config /repo/.linter.yml /repo }
 mdfix() { docker run --rm -v $(pwd):/repo avtodev/markdown-lint:v1 --config /repo/.linter.yml /repo --fix }
+clip() { xclip -selection clipboard; }
 
 ram() { ps -o pid,user,%mem,command ax | sort -b -k3 | head -n-1; }
 
