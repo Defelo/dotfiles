@@ -82,6 +82,8 @@ wttr() {
     curl -s "wttr.in/$1?lang=de" | head -n -2
 }
 
+vz() { vim ~/.zshrc; source ~/.zshrc }
+
 neofetch() {
     cat ~/.neofetch | sed s/sh/zsh/ | sed s/crond/st/
 }
