@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # setup primary display for tray
-xrandr --output eDP-1-1 --primary
+# xrandr --output eDP-1-1 --primary
 
 # no auto blank
 xset s off
@@ -40,3 +40,5 @@ picom &
 # hide mouse when typing
 xbanish &
 
+# start playerctld daemon for playerctl
+playerctld daemon

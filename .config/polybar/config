@@ -52,7 +52,7 @@ blue-gray = #546e7a
 ;==========================================================
 
 [bar/main]
-# monitor = LVDS1
+monitor = ${env:MONITOR:}
 width = 100%
 height = 20
 offset-x = 0%
@@ -83,7 +83,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=9;3"
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-tray-position = right
+tray-position = ${env:TRAY_POSITION:none}
 tray-padding = 1
 ;tray-maxsize = 16
 
@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window
-modules-right = coc pkg mem cpu dunst volume battery network date
+modules-right = mem cpu dunst volume battery network date
  
 ;== Modules ========================================================
 
@@ -114,7 +114,7 @@ click-right = rmenu_wi_g
 
 [module/workspaces]
 type = internal/i3
-;pin-workspaces = false
+pin-workspaces = true
 enable-click = true
 enable-scroll = true
 wrapping-scroll = false

@@ -152,6 +152,21 @@ assign [class="Minecraft"] $workspace42
 
 for_window [class="Spotify"] move to workspace $workspace10
 
+# assign workspaces to screens
+workspace $workspace0 output DP1
+workspace $workspace1 output eDP1
+workspace $workspace2 output eDP1
+workspace $workspace3 output eDP1
+workspace $workspace4 output eDP1
+workspace $workspace5 output eDP1
+workspace $workspace6 output eDP1
+workspace $workspace7 output eDP1
+workspace $workspace8 output eDP1
+workspace $workspace9 output eDP1
+workspace $workspace10 output eDP1
+workspace $workspace42 output eDP1
+workspace $workspace1337 output eDP1
+
 # switch to workspace
 bindsym $mod+asciicircum workspace $workspace0
 bindsym $mod+1 workspace $workspace1
@@ -181,6 +196,10 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 bindsym $mod+Shift+ssharp move container to workspace $workspace42
 bindsym $mod+Shift+acute move container to workspace $workspace1337
+
+# move focused workspace to monitor
+bindsym $mod+Ctrl+j move workspace to output DP1
+bindsym $mod+Ctrl+k move workspace to output eDP1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -232,7 +251,11 @@ bindsym $mod+r mode "resize"
 #        }
 #}
 
-exec_always --no-startup-id "pkill -9 polybar; polybar main"
+exec --no-startup-id "xrandr --output DP1 --left-of eDP1"
+exec --no-startup-id "xrandr --output eDP1 --primary"
+
+#exec_always --no-startup-id "pkill -9 polybar; polybar main"
+exec_always --no-startup-id "pkill -9 polybar; ~/.i3scripts/polybar.sh"
 exec_always --no-startup-id "pkill xfce4-clipman; xfce4-clipman"
 
 #exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/python_wallpaper.png"
@@ -246,7 +269,8 @@ for_window [class="^.*"] border none
 
 bindsym $mod+Tab workspace back_and_forth
 
-bindsym $mod+Shift+y exec $HOME/.i3scripts/lock.sh
+#bindsym $mod+Shift+y exec $HOME/.i3scripts/lock.sh
+bindsym $mod+Shift+y exec "$HOME/i3lock-fancy-multimonitor/lock -n -p"
 #bindsym $mod+Ctrl+Shift+s exec "sudo systemctl suspend"
 bindsym $mod+p exec "st python"
 #bindsym $mod+g exec "firefox ecosia.org"
@@ -259,6 +283,7 @@ bindsym $mod+Ctrl+e exec nemo
  
  
 bindsym $mod+Shift+w exec st ~/.i3scripts/wtr.sh
+bindsym $mod+Ctrl+w exec st ~/.i3scripts/wtr2.sh
 bindsym $mod+Shift+p exec st pulsemixer
 
 
@@ -284,7 +309,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshot
-bindsym Print exec gnome-screenshot -i
+#bindsym Print exec gnome-screenshot -i
+bindsym Print exec flameshot gui
 bindsym Shift+Print exec freeze_screen.sh
 
 # lshr.tk
@@ -308,8 +334,16 @@ bindsym $mod+Shift+D exec $HOME/PyDrocsid/dev.sh
 # mic_over_mumble
 bindsym $mod+Shift+M exec st $HOME/.i3scripts/mic.sh
 
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+
 # disable mouse focus
-focus_follows_mouse no
+#focus_follows_mouse no
 
 # Run setup script
 exec --no-startup-id ~/.i3scripts/setup.sh

@@ -37,7 +37,7 @@ bindkey '^ ' autosuggest-accept
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$PATH:~/.gem/ruby/2.6.0/bin/:/home/felix/.dotnet/tools:/home/felix/.local/bin"
+export PATH="$PATH:~/.gem/ruby/2.6.0/bin/:/home/felix/.dotnet/tools:/home/felix/.local/bin:./node_modules/.bin"
 
 alias .='source'
 alias vim='nvim'
@@ -72,9 +72,15 @@ alias :e='vim'
 alias gource='gource -s 0.4 -i 0 -a 0.5 --highlight-users --file-extensions --hide mouse,filenames --key --stop-at-end'
 alias mnt='source ~/mount.sh'
 alias bt='bluetoothctl'
-alias bprune='borg prune -v --list --stats --keep-daily=4 --keep-weekly=2 --keep-monthly=1'
+alias bprune='borg prune -v --list --stats --keep-daily=2 --keep-weekly=2 --keep-monthly=2'
 alias cal='cal -m'
-alias vlc='vlc -I ncurses'
+alias vlc='~/.i3scripts/vlc_notifications.sh'
+alias redis='redis-cli -u redis://10.42.2.6'
+
+alias -s yml=vim
+alias -s yaml=vim
+alias -s txt=vim
+alias -s md=vim
 
 [[ -f ~/.zshrc.enc ]] && . ~/.zshrc.enc
 
@@ -152,6 +158,11 @@ deltemp() {
     rm -r /tmp/$(echo $d | cut -d/ -f3)
 }
 
+pydrocsid_update() {
+    git fetch --prune template
+    git merge --no-ff -m "Merge template into $(git branch --show-current)" template/develop
+}
+
 mdlint() { docker run --rm -v $(pwd):/repo:ro avtodev/markdown-lint:v1 --config /repo/.linter.yml /repo }
 mdfix() { docker run --rm -v $(pwd):/repo avtodev/markdown-lint:v1 --config /repo/.linter.yml /repo --fix }
 
@@ -164,6 +175,38 @@ cheat() { curl cheat.sh/$1; }
 pypub() { python setup.py sdist bdist_wheel && twine upload dist/*; rm -r build/ dist/ *.egg-info; }
 
 noup() { touch /tmp/updates_blocked; }
+
+luks_open(){
+    LUKS_NAME=$2
+    LUKS_MOUNT=$3
+    sudo cryptsetup open $1 $2 && sudo mount /dev/mapper/$2 $3 && cd $3
+}
+
+luks_close(){
+    sudo umount $LUKS_MOUNT
+    sudo cryptsetup close $LUKS_NAME
+}
+
+vm() {
+    port=$1
+    port=${port:-2222}
+    echo Starting VM
+    tmux new -s vm-$port -d qemu-system-x86_64 -cdrom ~/ISO/ArchISO/archlinux-2021.09.23-x86_64.iso -enable-kvm -cpu host -m 2G -display none -device virtio-net-pci,netdev=network0 -netdev user,id=network0,hostfwd=tcp::$port-:22
+    sleep 2
+    echo Waiting for SSH server
+    while ! ssh -p 2222 root@localhost
+    do
+        sleep 1
+    done
+}
+
+vmanjaro() {
+    tmux new -s vmanjaro -d qemu-system-x86_64 -enable-kvm -cpu host -m 4G -display gtk -drive file=qemu_manjaro.img,format=qcow2 -audiodev pa,id=snd0 -device ich9-intel-hda -device hda-output,audiodev=snd0
+}
+
+blkw() {
+    tmux new -s blkw zsh -c 'while inotifywait -e close_write -r .; do black -l 120 .; done'
+}
 
 export EDITOR=nvim
 export VISUAL=nvim
