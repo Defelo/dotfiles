@@ -90,9 +90,9 @@ wttr() {
 
 vz() { vim ~/.zshrc; source ~/.zshrc }
 
-neofetch() {
-    cat ~/.neofetch | sed s/sh/zsh/ | sed s/crond/st/
-}
+# neofetch() {
+#     cat ~/.neofetch | sed s/sh/zsh/ | sed s/crond/st/
+# }
 
 bmnt() {
     borg mount -o ignore_permissions $1 $2
