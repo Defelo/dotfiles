@@ -318,6 +318,10 @@ bindsym $mod+KP_Subtract exec $HOME/.i3scripts/shorten.py
 
 # Dunst
 bindsym $mod+KP_Add exec $HOME/.i3scripts/toggle_dunst.sh
+bindsym Pause exec dunstctl close
+bindsym Shift+Pause exec dunstctl close-all
+bindsym Ctrl+Break exec dunstctl history-pop
+bindsym Mod1+Pause exec dunstctl context
 
 # QR
 bindsym $mod+KP_Multiply exec $HOME/.i3scripts/qr.sh
