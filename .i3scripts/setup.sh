@@ -23,6 +23,7 @@ gnome-keyring-daemon --start
 #fi
 
 # setxkbmap de
+setxkbmap -model pc105 -layout de,apl -variant nodeadkeys,dyalog -option grp:menu_switch
 
 # xrdb -load ~/.Xdefaults
 # sleep 1

@@ -76,6 +76,7 @@ alias bprune='borg prune -v --list --stats --keep-daily=2 --keep-weekly=2 --keep
 alias cal='cal -m'
 alias vlc='~/.i3scripts/vlc_notifications.sh'
 alias redis='redis-cli -u redis://10.42.2.6'
+alias py='python'
 
 alias -s yml=vim
 alias -s yaml=vim
@@ -209,8 +210,15 @@ blkw() {
     tmux new -s blkw zsh -c 'while inotifywait -e close_write -r .; do black -l 120 .; done'
 }
 
+lint() {
+    blk && pipenv run flake8 --exclude data && pipenv run mypy --exclude data
+}
+
 export EDITOR=nvim
 export VISUAL=nvim
 
 title Terminal
 neofetch
+
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc

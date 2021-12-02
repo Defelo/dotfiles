@@ -175,6 +175,8 @@ filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
 " fileviewer *.pdf pdftotext -nopgbrk %c -
 filetype *.pdf brave %c 2>&1 >/dev/null
 
+filetype *.xopp xournalpp %c &> /dev/null &
+
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
         \ {View in zathura}
