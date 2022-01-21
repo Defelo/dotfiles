@@ -22,7 +22,7 @@ tmux = "~/.tmux.conf"
 [zsh.files]
 zprofile = "~/.zprofile"
 zshrc = "~/.zshrc"
-"zshrc.enc" = "~/.zshrc.enc"
+"zshrc.enc" = { target = "~/.zshrc.enc", type = "template", if = "enc" }
 
 [p10k]
 depends = ["zsh"]
