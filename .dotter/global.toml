@@ -39,6 +39,7 @@ xresources = "~/.Xresources"
 profile = "~/.profile"
 
 [scripts.files]
+"scripts/backlight.py" = { target = "/usr/local/bin/backlight.py", type = "template", owner = 0 }
 scripts = "~/scripts"
 
 [icons.files]
@@ -46,3 +47,15 @@ Icons = { target = "~/Pictures/Icons", type = "symbolic" }
 
 [wallpapers.files]
 Wallpapers = { target = "~/Pictures/Wallpapers", type = "symbolic" }
+
+[i3.files]
+i3 = "~/.config/i3/config"
+
+[i3.variables.i3.clipman]
+enabled = true
+
+[compton]
+depends = ["i3"]
+
+[polybar]
+depends = ["i3"]

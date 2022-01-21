@@ -204,7 +204,11 @@ bindsym $mod+Ctrl+k move workspace to output eDP1
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+{{#if dotter.packages.compton}}
 bindsym $mod+Shift+r exec "pkill compton; i3-msg restart; compton &"
+{{else}}
+bindsym $mod+Shift+r exec "i3-msg restart"
+{{/if}}
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -254,12 +258,17 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id "xrandr --output DP1 --left-of eDP1"
 exec --no-startup-id "xrandr --output eDP1 --primary"
 
+{{#if dotter.packages.polybar}}
 #exec_always --no-startup-id "pkill -9 polybar; polybar main"
 exec_always --no-startup-id "pkill -9 polybar; ~/scripts/polybar.sh"
+{{/if}}
+{{#if i3.clipman.enabled}}
 exec_always --no-startup-id "pkill xfce4-clipman; xfce4-clipman"
+{{/if}}
 
-#exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/python_wallpaper.png"
+{{#if dotter.packages.wallpapers}}
 exec --no-startup-id $HOME/scripts/wallpaper.sh
+{{/if}}
 
 hide_edge_borders both
 
@@ -269,8 +278,7 @@ for_window [class="^.*"] border none
 
 bindsym $mod+Tab workspace back_and_forth
 
-#bindsym $mod+Shift+y exec $HOME/.i3scripts/lock.sh
-bindsym $mod+Shift+y exec "$HOME/i3lock-fancy-multimonitor/lock -n -p"
+bindsym $mod+Shift+y exec "~/scripts/lock.sh -n -p"
 #bindsym $mod+Ctrl+Shift+s exec "sudo systemctl suspend"
 bindsym $mod+p exec "st python"
 #bindsym $mod+g exec "firefox ecosia.org"
@@ -282,8 +290,10 @@ bindsym $mod+Shift+f exec "brave"
 bindsym $mod+Ctrl+e exec nemo
  
  
+{{#if enc}}
 bindsym $mod+Shift+w exec st ~/scripts/wtr.sh
 bindsym $mod+Ctrl+w exec st ~/scripts/wtr2.sh
+{{/if}}
 bindsym $mod+Shift+p exec st pulsemixer
 
 
@@ -311,7 +321,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenshot
 #bindsym Print exec gnome-screenshot -i
 bindsym Print exec flameshot gui
-bindsym Shift+Print exec freeze_screen.sh
+bindsym Shift+Print exec ~/scripts/freeze_screen.sh
 
 # lshr.tk
 bindsym $mod+KP_Subtract exec $HOME/scripts/shorten.py
@@ -331,9 +341,6 @@ bindsym $mod+KP_Divide exec python $HOME/discord_ban.py
 
 # emoji menu
 bindsym $mod+comma exec $HOME/scripts/emoji_menu.sh
-
-# pydrocsid dev
-bindsym $mod+Shift+D exec $HOME/PyDrocsid/dev.sh
 
 # mic_over_mumble
 bindsym $mod+Shift+M exec st $HOME/scripts/mic.sh
