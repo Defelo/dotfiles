@@ -185,7 +185,12 @@ noup() { touch /tmp/updates_blocked; }
 luks_open(){
     LUKS_NAME=$2
     LUKS_MOUNT=$3
-    sudo cryptsetup open $1 $2 && sudo mount /dev/mapper/$2 $3 && cd $3
+    if [[ -f $1.key ]]; then
+        gpg --decrypt $1.key | sudo cryptsetup open -d - $1 $2
+    else
+        sudo cryptsetup open $1 $2
+    fi
+    sudo mount /dev/mapper/$2 $3 && cd $3
 }
 
 luks_close(){
