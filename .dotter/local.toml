@@ -4,4 +4,4 @@ packages = ["vim", "tmux", "zsh", "p10k"]
 [files]
 
 [variables]
-enc = true
+enc = false
