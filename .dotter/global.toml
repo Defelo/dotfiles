@@ -40,3 +40,9 @@ profile = "~/.profile"
 
 [scripts.files]
 scripts = "~/scripts"
+
+[icons.files]
+Icons = { target = "~/Pictures/Icons", type = "symbolic" }
+
+[wallpapers.files]
+Wallpapers = { target = "~/Pictures/Wallpapers", type = "symbolic" }

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-feh --bg-scale ~/Cryptic/clean_wallpaper.jpg
+feh --bg-scale ~/Pictures/Wallpapers/cryptic.png
