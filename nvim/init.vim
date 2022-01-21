@@ -23,4 +23,4 @@ autocmd FileType yaml setlocal shiftwidth=2
 autocmd FileType text setlocal textwidth=0
 autocmd FileType text setlocal wrapmargin=0
 
-source ~/.config/nvim/custom.vim
+source ~/.config/nvim/plugins.vim
