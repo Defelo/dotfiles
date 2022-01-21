@@ -19,8 +19,10 @@ enabled = true
 [tmux.files]
 tmux = "~/.tmux.conf"
 
+[zsh]
+depends = ["profile"]
+
 [zsh.files]
-zprofile = "~/.zprofile"
 zshrc = "~/.zshrc"
 "zshrc.enc" = { target = "~/.zshrc.enc", type = "template", if = "enc" }
 
@@ -29,3 +31,9 @@ depends = ["zsh"]
 
 [p10k.files]
 p10k = "~/.p10k.zsh"
+
+[x11.files]
+xresources = "~/.Xresources"
+
+[profile.files]
+profile = "~/.profile"
