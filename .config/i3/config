@@ -346,6 +346,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 
+bindsym $mod+Ctrl+M exec $HOME/.i3scripts/type_password.sh
+
+bindsym $mod+Ctrl+B exec ~/.i3scripts/btc.sh
+
+bindsym $mod+T exec $HOME/.i3scripts/termdown.sh
+
+
 # disable mouse focus
 #focus_follows_mouse no
 
