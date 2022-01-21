@@ -101,16 +101,16 @@ modules-right = yk mem cpu dunst volume battery network date
  
 ;== Modules ========================================================
 
-[module/arch]
-type = custom/text
-content = 
-;alt-icon = 
-content-padding = 1
-content-background = ${color.acolor}
-content-foreground = ${color.fg}
-click-left = rmenu_g
-click-middle = rfull
-click-right = rmenu_wi_g
+; [module/arch]
+; type = custom/text
+; content = 
+; ;alt-icon = 
+; content-padding = 1
+; content-background = ${color.acolor}
+; content-foreground = ${color.fg}
+; click-left = rmenu_g
+; click-middle = rfull
+; click-right = rmenu_wi_g
 
 [module/workspaces]
 type = internal/i3
@@ -178,15 +178,15 @@ format-foreground = ${color.fg-alt}
 
 ;==========================================================
 
-[module/mpd]
-type = custom/script
-interval = 1
-;format-prefix = " "
-format = <label>
-exec = spotify_status.py -p ',%{u#000}%{-u}' -f '{play_pause} {song}'
-format-underline = ${color.acolor}
-format-foreground= ${color.fg-alt}
-click-left = playerctl play-pause
+; [module/mpd]
+; type = custom/script
+; interval = 1
+; ;format-prefix = " "
+; format = <label>
+; exec = spotify_status.py -p ',%{u#000}%{-u}' -f '{play_pause} {song}'
+; format-underline = ${color.acolor}
+; format-foreground= ${color.fg-alt}
+; click-left = playerctl play-pause
 
 ;==========================================================
 
@@ -284,7 +284,7 @@ label-mounted = %free%
 
 [module/network]
 type = custom/script
-exec = ~/scripts/check-network
+exec = ~/scripts/check-network.sh
 click-left = nm-connection-editor
 tail = true
 format-underline = ${color.acolor}
@@ -296,13 +296,13 @@ label = %date% %time%
 time =  %H:%M:%S
 date =  %Y-%m-%d
 
-[module/powermenu]
-type = custom/text
-content = 
-content-padding = 1
-content-background = ${color.acolor}
-content-foreground = ${color.fg}
-click-left = pmenu_g
-click-right = pmenu_g
+; [module/powermenu]
+; type = custom/text
+; content = 
+; content-padding = 1
+; content-background = ${color.acolor}
+; content-foreground = ${color.fg}
+; click-left = pmenu_g
+; click-right = pmenu_g
 
 ;== EOF ========================================================
