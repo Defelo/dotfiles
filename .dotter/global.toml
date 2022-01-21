@@ -57,6 +57,9 @@ enabled = true
 [compton]
 depends = ["i3"]
 
+[compton.files]
+compton = "~/.config/compton.conf"
+
 [polybar]
 depends = ["i3", "fonts"]
 
