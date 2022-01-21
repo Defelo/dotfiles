@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window
-modules-right = mem cpu dunst volume battery network date
+modules-right = yk mem cpu dunst volume battery network date
  
 ;== Modules ========================================================
 
@@ -196,6 +196,12 @@ exec = "[ true = $(dunstctl is-paused) ] && echo %{u#000}%{-u} || echo "
 interval=1
 format-underline = ${color.acolor}
 click-left = "dunstctl set-paused toggle"
+
+[module/yk]
+type = custom/script
+exec = python ~/.i3scripts/yktd.py
+tail = true
+;format-underline = ${color.acolor}
 
 [module/coc]
 type = custom/script
