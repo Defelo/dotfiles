@@ -105,6 +105,10 @@ venv() {
     . .venv/bin/activate
 }
 
+jinja2() {
+    python -c 'argv=__import__("sys").argv[1:];print(__import__("jinja2").Template(open(0).read()).render(**__import__("json").loads(argv[0] if argv else "{}")))' $@
+}
+
 totp() {
     code=$(oathtool -b --totp $1)
     echo $code
