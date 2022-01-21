@@ -14,8 +14,11 @@ cd ~/.i3scripts/
 # configure touchpad
 ./setuptouchpad.sh
 
-# start ssh agent
-gnome-keyring-daemon --start
+# # start ssh agent
+# gnome-keyring-daemon --start
+
+# start gpg agent
+gpgconf --launch gpg-agent
 
 # run lidlocker if it is not running yet
 #if [ "`ps -A | grep lidlocker.sh`" = "" ]; then
