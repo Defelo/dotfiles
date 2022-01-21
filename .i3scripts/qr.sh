@@ -1,6 +1,6 @@
 #!/bin/bash
 
 f=$(mktemp)
-xclip -o | qr > $f
+xclip -o -selection clipboard | qr > $f
 feh $f
 rm $f
