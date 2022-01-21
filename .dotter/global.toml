@@ -15,3 +15,6 @@ enabled = true
 
 [vim.variables.vim.plugins.vimtex]
 enabled = true
+
+[tmux.files]
+tmux = "~/.tmux.conf"
