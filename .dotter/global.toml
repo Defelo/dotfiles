@@ -7,6 +7,7 @@ depends = []
 [default.variables]
 
 [vim.files]
+"nvim/plug.vim" = "~/.local/share/nvim/site/autoload/plug.vim"
 nvim = "~/.config/nvim"
 
 [vim.variables.vim.plugins.airline]
