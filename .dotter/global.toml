@@ -1,0 +1,16 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+[default.variables]
+
+[vim.files]
+nvim = "~/.config/nvim"
+
+[vim.variables.vim.plugins.airline]
+enabled = true
+
+[vim.variables.vim.plugins.vimtex]
+enabled = true
