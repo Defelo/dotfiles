@@ -68,3 +68,9 @@ polybar = "~/.config/polybar/config"
 
 [fonts.files]
 fonts = { target = "~/.fonts", type = "symbolic" }
+
+[dunst]
+depends = ["i3"]
+
+[dunst.files]
+dunstrc = "~/.config/dunst/dunstrc"
