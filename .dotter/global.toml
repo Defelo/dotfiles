@@ -21,3 +21,11 @@ tmux = "~/.tmux.conf"
 
 [zsh.files]
 zprofile = "~/.zprofile"
+zshrc = "~/.zshrc"
+"zshrc.enc" = "~/.zshrc.enc"
+
+[p10k]
+depends = ["zsh"]
+
+[p10k.files]
+p10k = "~/.p10k.zsh"
