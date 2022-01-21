@@ -11,3 +11,7 @@ if [[ -L ~/.zprofile ]]; then
     rm ~/.zprofile
 fi
 {{/if}}
+
+{{#if dotter.packages.fonts}}
+fc-cache -vf ~/.fonts
+{{/if}}

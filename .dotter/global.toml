@@ -58,7 +58,10 @@ enabled = true
 depends = ["i3"]
 
 [polybar]
-depends = ["i3"]
+depends = ["i3", "fonts"]
 
 [polybar.files]
 polybar = "~/.config/polybar/config"
+
+[fonts.files]
+fonts = { target = "~/.fonts", type = "symbolic" }
