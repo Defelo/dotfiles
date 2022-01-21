@@ -37,3 +37,6 @@ xresources = "~/.Xresources"
 
 [profile.files]
 profile = "~/.profile"
+
+[scripts.files]
+scripts = "~/scripts"

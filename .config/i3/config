@@ -255,11 +255,11 @@ exec --no-startup-id "xrandr --output DP1 --left-of eDP1"
 exec --no-startup-id "xrandr --output eDP1 --primary"
 
 #exec_always --no-startup-id "pkill -9 polybar; polybar main"
-exec_always --no-startup-id "pkill -9 polybar; ~/.i3scripts/polybar.sh"
+exec_always --no-startup-id "pkill -9 polybar; ~/scripts/polybar.sh"
 exec_always --no-startup-id "pkill xfce4-clipman; xfce4-clipman"
 
 #exec --no-startup-id "feh --bg-scale /usr/share/backgrounds/python_wallpaper.png"
-exec --no-startup-id $HOME/.i3scripts/wallpaper.sh
+exec --no-startup-id $HOME/scripts/wallpaper.sh
 
 hide_edge_borders both
 
@@ -282,8 +282,8 @@ bindsym $mod+Shift+f exec "brave"
 bindsym $mod+Ctrl+e exec nemo
  
  
-bindsym $mod+Shift+w exec st ~/.i3scripts/wtr.sh
-bindsym $mod+Ctrl+w exec st ~/.i3scripts/wtr2.sh
+bindsym $mod+Shift+w exec st ~/scripts/wtr.sh
+bindsym $mod+Ctrl+w exec st ~/scripts/wtr2.sh
 bindsym $mod+Shift+p exec st pulsemixer
 
 
@@ -300,7 +300,7 @@ bindsym XF86MonBrightnessUp exec sudo backlight.py +5 # increase screen brightne
 bindsym XF86MonBrightnessDown exec sudo backlight.py -5 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec $HOME/.i3scripts/toggletouchpad.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec $HOME/scripts/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -314,29 +314,29 @@ bindsym Print exec flameshot gui
 bindsym Shift+Print exec freeze_screen.sh
 
 # lshr.tk
-bindsym $mod+KP_Subtract exec $HOME/.i3scripts/shorten.py
+bindsym $mod+KP_Subtract exec $HOME/scripts/shorten.py
 
 # Dunst
-bindsym $mod+KP_Add exec $HOME/.i3scripts/toggle_dunst.sh
+bindsym $mod+KP_Add exec $HOME/scripts/toggle_dunst.sh
 bindsym Pause exec dunstctl close
 bindsym Shift+Pause exec dunstctl close-all
 bindsym Ctrl+Break exec dunstctl history-pop
 bindsym Mod1+Pause exec dunstctl context
 
 # QR
-bindsym $mod+KP_Multiply exec $HOME/.i3scripts/qr.sh
+bindsym $mod+KP_Multiply exec $HOME/scripts/qr.sh
 
 # Discord Raid Ban
 bindsym $mod+KP_Divide exec python $HOME/discord_ban.py
 
 # emoji menu
-bindsym $mod+comma exec $HOME/.i3scripts/emoji_menu.sh
+bindsym $mod+comma exec $HOME/scripts/emoji_menu.sh
 
 # pydrocsid dev
 bindsym $mod+Shift+D exec $HOME/PyDrocsid/dev.sh
 
 # mic_over_mumble
-bindsym $mod+Shift+M exec st $HOME/.i3scripts/mic.sh
+bindsym $mod+Shift+M exec st $HOME/scripts/mic.sh
 
 
 # Make the currently focused window a scratchpad
@@ -346,18 +346,18 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 
-bindsym $mod+Ctrl+M exec $HOME/.i3scripts/type_password.sh
+bindsym $mod+Ctrl+M exec $HOME/scripts/type_password.sh
 
-bindsym $mod+Ctrl+B exec ~/.i3scripts/btc.sh
+bindsym $mod+Ctrl+B exec ~/scripts/btc.sh
 
-bindsym $mod+T exec $HOME/.i3scripts/termdown.sh
+bindsym $mod+T exec $HOME/scripts/termdown.sh
 
 
 # disable mouse focus
 #focus_follows_mouse no
 
 # Run setup script
-exec --no-startup-id ~/.i3scripts/setup.sh
+exec --no-startup-id ~/scripts/setup.sh
 
 # Start some programs
 #exec firefox

@@ -1,6 +1,7 @@
 *.enc filter=git-crypt diff=git-crypt
-/.i3scripts/shorten.py filter=git-crypt diff=git-crypt
-/.i3scripts/wtr.sh filter=git-crypt diff=git-crypt
-/.i3scripts/type_password.sh filter=git-crypt diff=git-crypt
-/.i3scripts/btc.sh filter=git-crypt diff=git-crypt
+/scripts/shorten.py filter=git-crypt diff=git-crypt
+/scripts/wtr.sh filter=git-crypt diff=git-crypt
+/scripts/wtr2.sh filter=git-crypt diff=git-crypt
+/scripts/type_password.sh filter=git-crypt diff=git-crypt
+/scripts/btc.sh filter=git-crypt diff=git-crypt
 /.config/redshift/redshift.conf filter=git-crypt diff=git-crypt

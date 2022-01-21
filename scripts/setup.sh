@@ -20,11 +20,6 @@ cd ~/.i3scripts/
 # start gpg agent
 gpgconf --launch gpg-agent
 
-# run lidlocker if it is not running yet
-#if [ "`ps -A | grep lidlocker.sh`" = "" ]; then
-#	./lidlocker.sh &
-#fi
-
 # setxkbmap de
 setxkbmap -model pc105 -layout de,apl -variant nodeadkeys,dyalog -option grp:menu_switch
 

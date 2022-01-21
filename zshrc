@@ -66,7 +66,9 @@ alias cf='ping 1.1.1.1'
 alias cov='pipenv run coverage && rm coverage.xml'
 alias g++c='g++ -O2 -Wall -Wextra'
 alias g++debug='g++c -fsanitize=undefined,address -D_GLIBCXX_DEBUG -g'
+{{#if (is_executable "exa")}}
 alias ls='exa -g --git'
+{{/if}}
 alias blk='black -l 120 .'
 alias config='GIT_DIR=/home/felix/dotfiles GIT_WORK_TREE=/home/felix /usr/bin/git'
 alias config-crypt='GIT_DIR=/home/felix/dotfiles GIT_WORK_TREE=/home/felix /usr/bin/git-crypt'
@@ -79,7 +81,7 @@ alias mnt='source ~/mount.sh'
 alias bt='bluetoothctl'
 alias bprune='borg prune -v --list --stats --keep-daily=2 --keep-weekly=2 --keep-monthly=2'
 alias cal='cal -m'
-alias vlc='~/.i3scripts/vlc_notifications.sh'
+alias vlc='~/scripts/vlc_notifications.sh'
 alias redis='redis-cli -u redis://10.42.2.6'
 alias py='python'
 
@@ -232,7 +234,9 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 title Terminal
+{{#if (is_executable "neofetch")}}
 neofetch
+{{/if}}
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc

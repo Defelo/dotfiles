@@ -199,29 +199,9 @@ click-left = "dunstctl set-paused toggle"
 
 [module/yk]
 type = custom/script
-exec = python ~/.i3scripts/yktd.py
+exec = python ~/scripts/yktd.py
 tail = true
 ;format-underline = ${color.acolor}
-
-[module/coc]
-type = custom/script
-exec = python /home/felix/coc.py
-tail = true
-format-underline = ${color.acolor}
-
-[module/aoc]
-type = custom/script
-exec = python /home/felix/aocleaderboard.py
-interval=60
-format-underline = ${color.acolor}
-
-[module/pkg]
-type = custom/script
-exec = updates.sh
-;exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-;label = %{A1:termite -e "aurman -Syyu" & disown:} %{A3:termite -e "aurman -Syyu" & disown:}%output%%{A} %{A}
-tail = true
-format-underline = ${color.acolor}
 
 [module/mem]
 type = internal/memory
@@ -304,9 +284,8 @@ label-mounted = %free%
 
 [module/network]
 type = custom/script
-exec = check-network
-click-left = networkmanager_dmenu &
-click-right = networkmanager_dmenu &
+exec = ~/scripts/check-network
+click-left = nm-connection-editor
 tail = true
 format-underline = ${color.acolor}
 
