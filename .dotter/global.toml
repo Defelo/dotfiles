@@ -18,3 +18,6 @@ enabled = true
 
 [tmux.files]
 tmux = "~/.tmux.conf"
+
+[zsh.files]
+zprofile = "~/.zprofile"
