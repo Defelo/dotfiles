@@ -66,7 +66,7 @@ alias cf='ping 1.1.1.1'
 alias cov='pipenv run coverage && rm coverage.xml'
 alias g++c='g++ -O2 -Wall -Wextra'
 alias g++debug='g++c -fsanitize=undefined,address -D_GLIBCXX_DEBUG -g'
-{{#if (is_executable "exa")}}
+{{#if (command_success "type exa")}}
 alias ls='exa -g --git'
 {{/if}}
 alias blk='black -l 120 .'
@@ -234,7 +234,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 title Terminal
-{{#if (is_executable "neofetch")}}
+{{#if (command_success "type neofetch")}}
 neofetch
 {{/if}}
 
