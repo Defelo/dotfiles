@@ -30,7 +30,7 @@ zstyle :compinstall filename '/home/felix/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^ ' autosuggest-accept
