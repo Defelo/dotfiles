@@ -83,3 +83,6 @@ depends = ["i3"]
 
 [rofi.files]
 rofi = "~/.config/rofi/config"
+
+[vifm.files]
+vifmrc = "~/.config/vifm/vifmrc"
