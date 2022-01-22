@@ -70,8 +70,6 @@ alias g++debug='g++c -fsanitize=undefined,address -D_GLIBCXX_DEBUG -g'
 alias ls='exa -g --git'
 {{/if}}
 alias blk='black -l 120 .'
-alias config='GIT_DIR=/home/felix/dotfiles GIT_WORK_TREE=/home/felix /usr/bin/git'
-alias config-crypt='GIT_DIR=/home/felix/dotfiles GIT_WORK_TREE=/home/felix /usr/bin/git-crypt'
 alias tre='ls -alT'
 alias volume='pactl set-sink-volume @DEFAULT_SINK@'
 alias :q='exit'
