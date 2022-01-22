@@ -1,0 +1,88 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+[default.variables]
+
+[vim.files]
+"nvim/plug.vim" = "~/.local/share/nvim/site/autoload/plug.vim"
+nvim = "~/.config/nvim"
+
+[vim.variables.vim.plugins.airline]
+enabled = true
+
+[vim.variables.vim.plugins.vimtex]
+enabled = true
+
+[tmux.files]
+tmux = "~/.tmux.conf"
+
+[zsh]
+depends = ["profile"]
+
+[zsh.files]
+zshrc = "~/.zshrc"
+"zshrc.enc" = { target = "~/.zshrc.enc", type = "template", if = "enc" }
+
+[p10k]
+depends = ["zsh"]
+
+[p10k.files]
+p10k = "~/.p10k.zsh"
+
+[x11.files]
+xresources = "~/.Xresources"
+
+[profile.files]
+profile = "~/.profile"
+
+[scripts.files]
+"scripts/backlight.py" = { target = "/usr/local/bin/backlight.py", type = "template", owner = 0 }
+scripts = "~/scripts"
+
+[icons.files]
+Icons = { target = "~/Pictures/Icons", type = "symbolic" }
+
+[wallpapers.files]
+Wallpapers = { target = "~/Pictures/Wallpapers", type = "symbolic" }
+
+[i3.files]
+i3 = "~/.config/i3/config"
+
+[i3.variables.i3.clipman]
+enabled = true
+
+[compton]
+depends = ["i3"]
+
+[compton.files]
+compton = "~/.config/compton.conf"
+
+[polybar]
+depends = ["i3", "fonts"]
+
+[polybar.files]
+polybar = "~/.config/polybar/config"
+
+[fonts.files]
+fonts = { target = "~/.fonts", type = "symbolic" }
+
+[dunst]
+depends = ["i3"]
+
+[dunst.files]
+dunstrc = "~/.config/dunst/dunstrc"
+
+[redshift.files]
+redshift = "~/.config/redshift/redshift.conf"
+
+[rofi]
+depends = ["i3"]
+
+[rofi.files]
+rofi = "~/.config/rofi/config"
+
+[vifm.files]
+vifmrc = "~/.config/vifm/vifmrc"
