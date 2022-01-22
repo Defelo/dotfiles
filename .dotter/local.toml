@@ -1,5 +1,5 @@
 includes = []
-packages = ["vim", "tmux", "zsh", "p10k", "x11", "profile", "scripts", "icons", "wallpapers", "i3", "compton", "polybar", "fonts", "dunst"]
+packages = ["vim", "tmux", "zsh", "p10k", "x11", "profile", "scripts", "icons", "wallpapers", "i3", "compton", "polybar", "fonts", "dunst", "redshift"]
 
 [files]
 

@@ -74,3 +74,6 @@ depends = ["i3"]
 
 [dunst.files]
 dunstrc = "~/.config/dunst/dunstrc"
+
+[redshift.files]
+redshift = "~/.config/redshift/redshift.conf"
