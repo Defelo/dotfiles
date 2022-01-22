@@ -1,9 +1,9 @@
 ! Transparency (0-1):
-st.alpha: 0.80
+st.alpha: {{st.alpha}}
 
 !! Set a default font and font size as below:
 !st.font: Monospace-10;
-st.font: MesloLGS NF-10;
+st.font: MesloLGS NF-{{st.fontsize}};
 
 ! st.termname: st-256color
 st.borderpx: 0

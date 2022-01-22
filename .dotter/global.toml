@@ -35,6 +35,10 @@ p10k = "~/.p10k.zsh"
 [x11.files]
 xresources = "~/.Xresources"
 
+[x11.variables.st]
+fontsize = 10
+alpha = 0.80
+
 [profile.files]
 profile = "~/.profile"
 
