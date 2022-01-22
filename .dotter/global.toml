@@ -77,3 +77,9 @@ dunstrc = "~/.config/dunst/dunstrc"
 
 [redshift.files]
 redshift = "~/.config/redshift/redshift.conf"
+
+[rofi]
+depends = ["i3"]
+
+[rofi.files]
+rofi = "~/.config/rofi/config"
