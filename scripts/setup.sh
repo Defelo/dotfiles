@@ -9,7 +9,7 @@ xset -dpms
 xset s noblank
 
 # cd into scripts folder
-cd ~/.i3scripts/
+cd ~/scripts/
 
 # configure touchpad
 ./setuptouchpad.sh
