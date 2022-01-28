@@ -84,6 +84,16 @@ alias redis='redis-cli -u redis://10.42.2.6'
 alias py='python'
 alias dotter='./dotter -v'
 
+alias docker='sudo docker'
+alias dc='sudo docker-compose'
+alias logs='dc logs -f'
+alias up='dc up -d && dc logs -f'
+alias down='dc down'
+alias restart='down && up'
+alias ct='sudo ctop'
+alias pull='dc pull'
+alias update='dc pull && up'
+
 alias -s yml=vim
 alias -s yaml=vim
 alias -s txt=vim
