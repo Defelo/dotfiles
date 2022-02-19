@@ -337,7 +337,7 @@ bindsym Mod1+Pause exec dunstctl context
 bindsym $mod+KP_Multiply exec $HOME/scripts/qr.sh
 
 # Discord Raid Ban
-bindsym $mod+KP_Divide exec python $HOME/discord_ban.py
+bindsym $mod+KP_Divide exec bash $HOME/discord_ban.sh
 
 # emoji menu
 bindsym $mod+comma exec $HOME/scripts/emoji_menu.sh
