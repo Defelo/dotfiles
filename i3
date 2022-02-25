@@ -281,6 +281,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+y exec "~/scripts/lock.sh -n -p"
 #bindsym $mod+Ctrl+Shift+s exec "sudo systemctl suspend"
 bindsym $mod+p exec "st python"
+bindsym $mod+ctrl+p exec "st irb"
 #bindsym $mod+g exec "firefox ecosia.org"
 #bindsym $mod+t exec thunderbird
 #bindsym $mod+Shift+f exec "firefox"
