@@ -242,6 +242,7 @@ lint() {
 
 export EDITOR=nvim
 export VISUAL=nvim
+export COLORTERM=truecolor
 
 title Terminal
 {{#if (command_success "type neofetch")}}
