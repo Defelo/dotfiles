@@ -84,6 +84,7 @@ alias redis='redis-cli -u redis://10.42.2.6'
 alias py='python'
 alias dotter='./dotter -v'
 alias diff='git diff --no-index'
+alias flake8='flake8 --count --statistics --show-source'
 
 alias docker='sudo docker'
 alias dc='sudo docker-compose'
