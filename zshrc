@@ -27,6 +27,7 @@ setopt  autocd autopushd #\ pushdignoredups
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/felix/.zshrc'
 
+fpath+=~/.zfunc
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -251,4 +252,3 @@ neofetch
 {{/if}}
 
 zstyle ':completion:*' menu select
-fpath+=~/.zfunc
