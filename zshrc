@@ -89,7 +89,7 @@ alias flake8='flake8 --count --statistics --show-source'
 
 alias docker='sudo docker'
 alias dc='sudo docker-compose'
-alias logs='dc logs -f'
+alias logs='dc logs -f --tail=1000'
 alias up='dc up -d && dc logs -f'
 alias down='dc down'
 alias restart='down && up'
