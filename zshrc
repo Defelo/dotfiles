@@ -78,7 +78,6 @@ alias :e='vim'
 alias gource='gource -s 0.4 -i 0 -a 0.5 --highlight-users --file-extensions --hide mouse,filenames --key --stop-at-end'
 alias mnt='source ~/mount.sh'
 alias bt='bluetoothctl'
-alias bprune='borg prune -v --list --stats --keep-daily=2 --keep-weekly=2 --keep-monthly=2'
 alias cal='cal -m'
 alias vlc='~/scripts/vlc_notifications.sh'
 alias redis='redis-cli -u redis://10.42.2.6'
@@ -103,6 +102,10 @@ alias -s txt=vim
 alias -s md=vim
 
 [[ -f ~/.zshrc.enc ]] && . ~/.zshrc.enc
+
+bprune() {
+    borg prune -v --list --stats --keep-daily=2 --keep-weekly=2 --keep-monthly=2 $1 && borg compact --progress $1
+}
 
 wttr() {
     curl -s "wttr.in/$1?lang=de" | head -n -2
