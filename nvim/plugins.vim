@@ -9,5 +9,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 {{/if}}
 
+{{#if vim.plugins.vim-nix.enabled}}
+Plug 'LnL7/vim-nix'
+{{/if}}
+
 " Initialize plugin system
 call plug#end()
