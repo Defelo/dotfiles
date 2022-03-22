@@ -96,7 +96,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces term files browser settings
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
-modules-left = workspaces window
+modules-left = workspaces window scratch
 modules-right = yk mem cpu dunst volume battery network date
  
 ;== Modules ========================================================
@@ -189,6 +189,12 @@ format-foreground = ${color.fg-alt}
 ; click-left = playerctl play-pause
 
 ;==========================================================
+
+[module/scratch]
+type = custom/script
+exec = "cnt=$(i3-msg -t get_tree | grep -o '\"scratchpad_state\":\"fresh\"' | wc -l);[ $cnt = 0 ] && echo %{u#000}%{-u} || echo +${cnt}"
+interval=1
+format-underline = ${color.acolor}
 
 [module/dunst]
 type = custom/script
