@@ -250,6 +250,14 @@ wgpeer() {
     echo "# Private Key: $key\n[Peer]\nPublicKey = $(wg pubkey <<< $key)\nPresharedKey = $(wg genpsk)\nAllowedIPs = "
 }
 
+shot() {
+    file=$(mktemp --suffix .png)
+    termshot -f $file -c -- "$@"
+    convert $file -crop 0x0+81+191 -crop -113-140 $file
+    xclip -selection clipboard -t image/png -i $file
+    eog $file
+}
+
 export EDITOR=nvim
 export VISUAL=nvim
 export COLORTERM=truecolor
