@@ -245,6 +245,11 @@ lint() {
     blk && pipenv run flake8 --exclude data && pipenv run mypy --exclude data
 }
 
+wgpeer() {
+    key=$(wg genkey)
+    echo "# Private Key: $key\n[Peer]\nPublicKey = $(wg pubkey <<< $key)\nPresharedKey = $(wg genpsk)\nAllowedIPs = "
+}
+
 export EDITOR=nvim
 export VISUAL=nvim
 export COLORTERM=truecolor
