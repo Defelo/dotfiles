@@ -50,6 +50,7 @@ alias vim='nvim'
 alias ls='ls --color=auto'
 alias sudo='sudo '
 alias ..='cd ..'
+alias ...='cd ../..'
 alias rm='rm -f'
 alias vi='vim'
 alias c='printf "\033c";neofetch'
@@ -60,7 +61,7 @@ alias cl='c;l'
 alias temp='cd $(mktemp -d)'
 alias grep='grep --color=always'
 alias back='cd $OLDPWD'
-alias f='cd $(pwd -P)'
+#alias f='cd $(pwd -P)'
 alias curl='curl -L'
 alias cif='curl ifconfig.co'
 alias cf='ping 1.1.1.1'
@@ -86,15 +87,15 @@ alias dotter='./dotter -v'
 alias diff='git diff --no-index'
 alias flake8='flake8 --count --statistics --show-source'
 
-alias docker='sudo docker'
+alias d='sudo docker'
 alias dc='sudo docker-compose'
 alias logs='dc logs -f --tail=1000'
-alias up='dc up -d && dc logs -f'
+up(){ dc up -d "$@" && dc logs -f "$@" }
 alias down='dc down'
-alias restart='down && up'
+restart(){ down "$@" && up "$@" }
 alias ct='sudo ctop'
 alias pull='dc pull'
-alias update='dc pull && up'
+update(){ dc pull "$@" && up "$@" }
 
 alias -s yml=vim
 alias -s yaml=vim
@@ -174,7 +175,7 @@ mkcd() {
     cd $1
 }
 
-d() {
+f() {
     dirs -v | tac
 }
 
