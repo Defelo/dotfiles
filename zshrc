@@ -92,7 +92,7 @@ alias dc='sudo docker-compose'
 alias logs='dc logs -f --tail=1000'
 up(){ dc up -d "$@" && dc logs -f "$@" }
 alias down='dc down'
-restart(){ down "$@" && up "$@" }
+restart(){ if [[ $# -eq 0 ]]; then down; else dc rm -fs "$@"; fi && up "$@" }
 alias ct='sudo ctop'
 alias pull='dc pull'
 update(){ dc pull "$@" && up "$@" }
