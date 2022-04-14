@@ -258,11 +258,13 @@ wgpeer() {
 
 shot() {
     file=$(mktemp --suffix .png)
-    termshot -f $file -c -- "$@"
-    convert $file -crop 0x0+81+191 -crop -113-140 $file
-    xclip -selection clipboard -t image/png -i $file
-    eog $file
+    termshot -f $file $TERMSHOT_FLAGS -- "$@" \
+        && convert $file -crop 0x0+81+191 -crop -113-140 $file \
+        && xclip -selection clipboard -t image/png -i $file \
+        && eog $file
 }
+
+cshot() { TERMSHOT_FLAGS="-c" shot "$@"; }
 
 export EDITOR=nvim
 export VISUAL=nvim
