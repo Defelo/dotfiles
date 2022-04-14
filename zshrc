@@ -43,7 +43,11 @@ source ~/.p10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 {{/if}}
 
-export PATH="$PATH:~/.gem/ruby/2.6.0/bin/:/home/felix/.dotnet/tools:/home/felix/.local/bin:./node_modules/.bin"
+add_path(){ export PATH="$1:$PATH"; }
+add_path ~/.gem/ruby/2.6.0/bin/
+add_path ~/.dotnet/tools
+add_path ~/.local/bin
+add_path ./node_modules/.bin
 
 alias .='source'
 alias vim='nvim'
