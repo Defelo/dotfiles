@@ -93,3 +93,6 @@ rofi = "~/.config/rofi/config"
 
 [vifm.files]
 vifmrc = "~/.config/vifm/vifmrc"
+
+[pbincli.files]
+pbincli = "~/.config/pbincli/pbincli.conf"
