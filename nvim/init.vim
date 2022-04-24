@@ -12,7 +12,7 @@ let g:airline#extensions#branch#enabled=1
 let g:powerline_pycmd="py3"
 {{/if}}
 
-set number
+set nu rnu
 
 filetype plugin indent on
 set tabstop=4
