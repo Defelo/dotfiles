@@ -12,6 +12,9 @@ let g:airline#extensions#branch#enabled=1
 let g:powerline_pycmd="py3"
 {{/if}}
 
+let g:markdown_fenced_languages = ["python", "java"]
+let g:markdown_minlines = 100
+
 set nu rnu
 
 filetype plugin indent on
