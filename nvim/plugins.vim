@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 {{#if vim.plugins.vimtex.enabled}}
 Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 {{/if}}
 
 {{#if vim.plugins.vim-nix.enabled}}
