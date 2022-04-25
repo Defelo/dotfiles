@@ -22,6 +22,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set updatetime=1000
+
 autocmd FileType yaml setlocal shiftwidth=2
 autocmd FileType text setlocal textwidth=0
 autocmd FileType text setlocal wrapmargin=0
