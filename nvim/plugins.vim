@@ -14,5 +14,11 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'LnL7/vim-nix'
 {{/if}}
 
+{{#if vim.plugins.vim-svelte.enabled}}
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+{{/if}}
+
 " Initialize plugin system
 call plug#end()

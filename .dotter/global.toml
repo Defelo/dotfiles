@@ -19,6 +19,9 @@ enabled = true
 [vim.variables.vim.plugins.vim-nix]
 enabled = true
 
+[vim.variables.vim.plugins.vim-svelte]
+enabled = true
+
 [tmux.files]
 tmux = "~/.tmux.conf"
 
