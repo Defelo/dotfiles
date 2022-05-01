@@ -266,6 +266,52 @@ shot() {
 
 cshot() { TERMSHOT_FLAGS="-c" shot "$@"; }
 
+temptex() {
+    file=$(mktemp --suffix .tex)
+    cat << EOF > $file
+\documentclass[12pt]{article}
+
+\usepackage[margin=1.2in,headsep=.2in]{geometry}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[shortlabels]{enumitem}
+
+\author{Foo Bar}
+\date{\today}
+\title{Temp}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+\begin{document}
+
+\maketitle
+
+% \$\$
+% \begin{align*}
+% \end{align*}
+% \$\$
+
+\end{document}
+EOF
+    nvim -c LLPStartPreview $file && rm $file
+}
+
 export EDITOR=nvim
 export VISUAL=nvim
 export COLORTERM=truecolor
