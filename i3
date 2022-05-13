@@ -322,6 +322,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenshot
 #bindsym Print exec gnome-screenshot -i
 bindsym Print exec flameshot gui
+bindsym Ctrl+Print exec ~/scripts/scan_qr.sh
 bindsym Shift+Print exec ~/scripts/freeze_screen.sh
 
 # lshr.tk
