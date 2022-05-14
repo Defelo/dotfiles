@@ -41,3 +41,6 @@ xbanish &
 
 # start playerctld daemon for playerctl
 playerctld daemon
+
+# start input daemon
+fcitx5 -d
