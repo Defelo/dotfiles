@@ -20,5 +20,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 {{/if}}
 
+Plug 'arcticicestudio/nord-vim'
+
 " Initialize plugin system
 call plug#end()
