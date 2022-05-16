@@ -15,6 +15,8 @@ let g:powerline_pycmd="py3"
 let g:markdown_fenced_languages = ["python", "java"]
 let g:markdown_minlines = 100
 
+let g:livepreview_previewer = 'okular'
+
 set nu rnu
 
 filetype plugin indent on
