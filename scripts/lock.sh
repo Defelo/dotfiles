@@ -14,6 +14,9 @@ DISPLAY_TEXT=true
 PIXELATE=false
 BLURTYPE="1x1"
 
+DISPLAY_TEXT=false
+PIXELATE=true
+
 # Read user input
 POSITIONAL=()
 for i in "$@"
