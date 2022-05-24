@@ -98,6 +98,8 @@ element-icon {
     cursor: inherit;
 }
 window {
+    width: 75%;
+    height: 75%;
     padding: 0;
     border: 0;
     background-color: var(background);
