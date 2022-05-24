@@ -44,3 +44,8 @@ playerctld daemon
 
 # start input daemon
 fcitx5 -d
+
+{{#if (command_success "type onboard")}}
+# start on screen keyboard
+onboard &
+{{/if}}
