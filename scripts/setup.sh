@@ -49,3 +49,6 @@ fcitx5 -d
 # start on screen keyboard
 onboard &
 {{/if}}
+
+# lock screen on suspend
+xss-lock --transfer-sleep-lock -- ~/scripts/lock.sh &
