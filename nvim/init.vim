@@ -19,6 +19,8 @@ let g:livepreview_previewer = 'okular'
 
 set nu rnu
 
+set clipboard=unnamedplus " sync vim clipboard with linux clipboard
+
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
