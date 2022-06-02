@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window scratch
-modules-right = yk restart mem cpu dunst volume battery network date
+modules-right = yk mem cpu dunst volume battery network date {{#if polybar.items.screenshot}}screenshot{{/if}}
  
 ;== Modules ========================================================
 
@@ -306,6 +306,12 @@ interval = 1
 label = %date% %time%
 time =  %H:%M:%S
 date =  %Y-%m-%d
+
+[module/screenshot]
+type = custom/text
+content = ""
+click-left = "flameshot gui -c"
+; format-underline = ${color.acolor}
 
 ; [module/powermenu]
 ; type = custom/text
