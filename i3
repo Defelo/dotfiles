@@ -376,7 +376,7 @@ exec --no-startup-id ~/scripts/setup.sh
 #exec firefox
 exec brave
 exec thunderbird
-exec discord
+exec discord-canary
 exec element-desktop
 exec Telegram
 #exec vlc
