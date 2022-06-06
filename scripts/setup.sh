@@ -18,7 +18,7 @@ cd ~/scripts/
 # gnome-keyring-daemon --start
 
 # start gpg agent
-gpgconf --launch gpg-agent
+gpgconf --launch gpg-agent && gpg-connect-agent updatestartuptty /bye
 
 # setxkbmap de
 setxkbmap -model pc105 -layout de,apl -variant nodeadkeys,dyalog -option grp:menu_switch
