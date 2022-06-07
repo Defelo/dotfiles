@@ -365,6 +365,7 @@ bindsym $mod+T exec $HOME/scripts/termdown.sh
 
 bindsym $mod+ctrl+P exec ~/scripts/pwgen.sh
 
+exec_always --no-startup-id autotiling
 
 # disable mouse focus
 #focus_follows_mouse no
