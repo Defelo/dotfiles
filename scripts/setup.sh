@@ -12,7 +12,9 @@ xset s noblank
 cd ~/scripts/
 
 # configure touchpad
-./setuptouchpad.sh
+while ! ./setuptouchpad.sh; do
+    sleep 1
+done
 
 # # start ssh agent
 # gnome-keyring-daemon --start

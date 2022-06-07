@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 synclient VertScrollDelta=-75
 synclient HorizScrollDelta=-75
 synclient TapButton1=1
