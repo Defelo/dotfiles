@@ -152,6 +152,8 @@ assign [class="Minecraft"] $workspace42
 
 for_window [class="Spotify"] move to workspace $workspace10
 
+for_window [class="Rofi"] floating enable
+
 # assign workspaces to screens
 workspace $workspace0 output DP1
 workspace $workspace1 output eDP1

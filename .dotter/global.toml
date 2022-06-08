@@ -80,6 +80,7 @@ polybar = "~/.config/polybar/config"
 
 [polybar.variables.items]
 screenshot = false
+rofi = false
 
 [fonts.files]
 fonts = { target = "~/.fonts", type = "symbolic" }
