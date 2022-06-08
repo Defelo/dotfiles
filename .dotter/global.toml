@@ -66,6 +66,9 @@ i3 = "~/.config/i3/config"
 [i3.variables.i3.clipman]
 enabled = true
 
+[i3.variables.i3.autotiling]
+enabled = true
+
 [compton]
 depends = ["i3"]
 

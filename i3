@@ -367,7 +367,9 @@ bindsym $mod+T exec $HOME/scripts/termdown.sh
 
 bindsym $mod+ctrl+P exec ~/scripts/pwgen.sh
 
+{{#if dotter.variables.i3.autotiling.enabled}}
 exec_always --no-startup-id autotiling
+{{/if}}
 
 # disable mouse focus
 #focus_follows_mouse no
