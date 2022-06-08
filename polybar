@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window scratch
-modules-right = {{#if polybar.items.screenshot}}screenshot{{/if}} {{#if polybar.items.rofi}}rofi{{/if}} yk mem cpu dunst volume battery network date
+modules-right = {{#if polybar.items.screenshot}}screenshot{{/if}} {{#if polybar.items.rofi}}rofi{{/if}} yk mem swap cpu dunst volume battery network date
  
 ;== Modules ========================================================
 
@@ -217,7 +217,12 @@ tail = true
 [module/mem]
 type = internal/memory
 interval = 2
-label = %gb_free%
+label = %free%
+
+[module/swap]
+type = internal/memory
+interval = 2
+label = %swap_used%
 
 [module/cpu]
 type = internal/cpu
