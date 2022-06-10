@@ -198,7 +198,7 @@ format-underline = ${color.acolor}
 
 [module/updates]
 type = custom/script
-exec = "x=$(paru -Qu | egrep -v '\[ignored\]$' | wc -l); [[ "$x" = 0 ]] && echo %{u#000}%{-u} || echo  $x"
+exec = "x=$(pacman -Qu | egrep -v '\[ignored\]$' | wc -l);y=;pacman -Quq | grep -q '^linux$' && y=; [[ "$x" = 0 ]] && echo %{u#000}%{-u} || echo $y $x"
 format-underline = ${color.acolor}
 interval=10
 
