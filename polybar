@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window scratch
-modules-right = {{#if polybar.items.screenshot}}screenshot{{/if}} {{#if polybar.items.rofi}}rofi{{/if}} yk updates mem swap cpu dunst volume battery network date
+modules-right = {{#if polybar.items.screenshot}}screenshot{{/if}} {{#if polybar.items.rofi}}rofi{{/if}} yk {{#if polybar.items.updates}}updates{{/if}} mem swap cpu dunst volume battery network date
  
 ;== Modules ========================================================
 
