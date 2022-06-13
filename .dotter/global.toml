@@ -10,18 +10,6 @@ depends = []
 "nvim/plug.vim" = "~/.local/share/nvim/site/autoload/plug.vim"
 nvim = "~/.config/nvim"
 
-[vim.variables.vim.plugins.airline]
-enabled = true
-
-[vim.variables.vim.plugins.vimtex]
-enabled = true
-
-[vim.variables.vim.plugins.vim-nix]
-enabled = true
-
-[vim.variables.vim.plugins.vim-svelte]
-enabled = true
-
 [tmux.files]
 tmux = "~/.tmux.conf"
 
@@ -43,15 +31,8 @@ xresources = "~/.Xresources"
 "gtk/2.0" = "~/.gtkrc-2.0"
 "gtk/3.0" = "~/.config/gtk-3.0/settings.ini"
 
-[x11.variables.st]
-fontsize = 10
-alpha = 0.80
-
 [profile.files]
 profile = "~/.profile"
-
-[profile.variables.profile]
-auto_start = ""
 
 [scripts.files]
 "scripts/backlight.py" = { target = "/usr/local/bin/backlight.py", type = "template", owner = 0 }
@@ -66,12 +47,6 @@ Wallpapers = { target = "~/Pictures/Wallpapers", type = "symbolic" }
 [i3.files]
 i3 = "~/.config/i3/config"
 
-[i3.variables.i3.clipman]
-enabled = true
-
-[i3.variables.i3.autotiling]
-enabled = true
-
 [compton]
 depends = ["i3"]
 
@@ -83,11 +58,6 @@ depends = ["i3", "fonts"]
 
 [polybar.files]
 polybar = "~/.config/polybar/config"
-
-[polybar.variables.items]
-screenshot = false
-rofi = false
-updates = true
 
 [fonts.files]
 fonts = { target = "~/.fonts", type = "symbolic" }

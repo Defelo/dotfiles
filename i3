@@ -266,7 +266,7 @@ exec --no-startup-id "xrandr --output eDP1 --primary"
 #exec_always --no-startup-id "pkill -9 polybar; polybar main"
 exec_always --no-startup-id "pkill -9 polybar; ~/scripts/polybar.sh"
 {{/if}}
-{{#if i3.clipman.enabled}}
+{{#if i3.clipman}}
 exec_always --no-startup-id "pkill xfce4-clipman; xfce4-clipman"
 {{/if}}
 
@@ -367,7 +367,7 @@ bindsym $mod+T exec $HOME/scripts/termdown.sh
 
 bindsym $mod+ctrl+P exec ~/scripts/pwgen.sh
 
-{{#if dotter.variables.i3.autotiling.enabled}}
+{{#if i3.autotiling}}
 exec_always --no-startup-id autotiling
 {{/if}}
 

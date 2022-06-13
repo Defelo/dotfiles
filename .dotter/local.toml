@@ -1,7 +1,41 @@
 includes = []
-packages = ["vim", "tmux", "zsh", "p10k", "x11", "profile", "scripts", "icons", "wallpapers", "i3", "compton", "polybar", "fonts", "dunst", "redshift", "rofi", "vifm", "pbincli"]
+
+packages = [
+    # cli
+    "vim", "tmux", "zsh", "p10k", "profile", "scripts", "vifm", "pbincli",
+
+    # gui
+    "x11", "icons", "wallpapers", "i3", "compton", "polybar", "rofi", "fonts", "dunst", "redshift"
+]
 
 [files]
 
 [variables]
 enc = false
+
+# vim
+[variables.vim.plugins]
+airline = true
+vimtex = true
+vim-nix = true
+vim-svelte = true
+
+# st
+[variables.st]
+fontsize = 10
+alpha = 0.80
+
+# profile
+[variables.profile]
+auto_start = ""
+
+# i3
+[variables.i3]
+clipman = true
+autotiling = false
+
+# polybar
+[variables.polybar.modules]
+screenshot = false
+rofi = false
+updates = true
