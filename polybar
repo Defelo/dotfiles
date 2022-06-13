@@ -238,7 +238,7 @@ format-underline = ${color.acolor}
 
 [module/battery]
 type = internal/battery
-full-at = 95
+full-at = {{polybar.battery.full-at}}
 time-format = %H:%M
 battery = BAT0
 adapter = AC

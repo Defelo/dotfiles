@@ -39,3 +39,6 @@ autotiling = false
 screenshot = false
 rofi = false
 updates = true
+
+[variables.polybar.battery]
+full-at = 95
