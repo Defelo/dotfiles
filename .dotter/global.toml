@@ -51,7 +51,7 @@ alpha = 0.80
 profile = "~/.profile"
 
 [profile.variables.profile]
-auto_startx = false
+auto_start = ""
 
 [scripts.files]
 "scripts/backlight.py" = { target = "/usr/local/bin/backlight.py", type = "template", owner = 0 }
