@@ -28,6 +28,8 @@ set expandtab
 
 set so=7
 
+set mouse=a
+
 set updatetime=1000
 
 autocmd FileType yaml setlocal shiftwidth=2
