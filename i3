@@ -145,6 +145,7 @@ assign [class="java-lang-Thread"] $workspace3
 assign [class="Thunderbird"] $workspace7
 assign [class="discord"] $workspace8
 assign [class="Element"] $workspace8
+assign [class="Slack"] $workspace8
 assign [class="TelegramDesktop"] $workspace9
 assign [class="vlc"] $workspace10
 assign [class="minecraft-launcher"] $workspace42
