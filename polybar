@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window scratch
-modules-right = {{#if polybar.modules.screenshot}}screenshot{{/if}} {{#if polybar.modules.rofi}}rofi{{/if}} yk {{#if polybar.modules.updates}}updates{{/if}} mem swap cpu dunst volume battery network date
+modules-right = {{#if polybar.modules.screenshot}}screenshot{{/if}} {{#if polybar.modules.rofi}}rofi{{/if}} yk {{#if polybar.modules.updates}}updates{{/if}} mem swap cpu dunst volume webcam battery network date
  
 ;== Modules ========================================================
 
@@ -294,6 +294,13 @@ ramp-volume-3 = 
 ramp-volume-4 = 
 ramp-volume-5 = 
 ramp-volume-6 = 
+
+[module/webcam]
+type = custom/script
+exec = "lsmod | grep -q uvcvideo && echo "" || echo %{u#000}%{-u}%{F#999}"
+click-left = "st -i sudo modprobe $(lsmod | grep -q uvcvideo && echo -r) uvcvideo"
+format-underline = ${color.acolor}
+interval=10
 
 [module/filesystem]
 type = internal/fs
