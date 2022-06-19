@@ -35,7 +35,6 @@ xresources = "~/.Xresources"
 profile = "~/.profile"
 
 [scripts.files]
-"scripts/backlight.py" = { target = "/usr/local/bin/backlight.py", type = "template", owner = 0 }
 scripts = "~/scripts"
 
 [icons.files]
