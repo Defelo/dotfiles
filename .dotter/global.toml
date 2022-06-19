@@ -82,3 +82,6 @@ vifmrc = "~/.config/vifm/vifmrc"
 
 [pbincli.files]
 pbincli = "~/.config/pbincli/pbincli.conf"
+
+[xournalpp.files]
+xournalpp = "~/.config/xournalpp"
