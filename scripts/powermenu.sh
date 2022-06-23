@@ -7,7 +7,19 @@ row=$(cat $CONFIG/last 2> /dev/null)
 
 save(){ echo $1 > $CONFIG/last; }
 
-case $(echo -e " System Update\n Lock\n Logout\n Suspend\n Hibernate\n Shutdown\n Reboot" | rofi -dmenu -i -selected-row ${row:-0} | cut -d' ' -f2-) in
+selection=$(cat << EOF | rofi -dmenu -i -selected-row ${row:-0} | cut -d' ' -f2-
+ System Update
+ Lock
+ Logout
+ Suspend
+ Suspend then Hibernate
+ Hibernate
+ Shutdown
+ Reboot
+EOF
+)
+
+case "$selection" in
     'System Update')
         save 0
         st -i sh -c 'paru; read -sn1'
@@ -24,16 +36,20 @@ case $(echo -e " System Update\n Lock\n Logout\n Suspend\n Hibern
         save 3
         systemctl suspend
         ;;
-    'Hibernate')
+    'Suspend then Hibernate')
         save 4
+        systemctl suspend-then-hibernate
+        ;;
+    'Hibernate')
+        save 5
         systemctl hibernate
         ;;
     'Shutdown')
-        save 5
+        save 6
         poweroff
         ;;
     'Reboot')
-        save 6
+        save 7
         reboot
         ;;
     *)
