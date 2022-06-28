@@ -44,6 +44,9 @@ xbanish &
 # start playerctld daemon for playerctl
 playerctld daemon
 
+# start vlc notification script
+~/scripts/vlc_notifications.sh &
+
 # start flameshot
 flameshot &
 

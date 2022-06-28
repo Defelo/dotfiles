@@ -7,17 +7,12 @@ function update() {
     notify-send "VLC Media Player" "$title"
 }
 
-function loop() {
+while true; do
     playerctl -F -p vlc metadata xesam:url 2>/dev/null | while read -r line
     do
-        if [[ ! "$line" ]]
+        if [[ -n "$line" ]]
         then
-            break
+            update "$line"
         fi
-        update "$line"
     done
-}
-
-loop &
-/usr/bin/vlc -I ncurses "$@"
-pkill playerctl
+done
