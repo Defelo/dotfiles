@@ -320,9 +320,13 @@ bindsym XF86TouchpadToggle exec $HOME/scripts/toggletouchpad.sh # toggle touchpa
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym Next exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
+bindsym Prior exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
+bindsym End exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym Home exec playerctl previous
 
 # Screenshot
 #bindsym Print exec gnome-screenshot -i
