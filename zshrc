@@ -65,7 +65,7 @@ alias cl='c;l'
 alias temp='cd $(mktemp -d)'
 alias grep='grep --color=auto'
 alias back='cd $OLDPWD'
-#alias f='cd $(pwd -P)'
+alias f='cd $(pwd -P)'
 alias curl='curl -L'
 alias cif='curl ifconfig.co'
 alias cf='ping 1.1.1.1'
@@ -92,7 +92,7 @@ alias diff='git diff --no-index'
 alias flake8='flake8 --count --statistics --show-source'
 alias mitm='REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt proxychains -q'
 
-alias d='sudo docker'
+alias dk='sudo docker'
 alias dc='sudo docker-compose'
 alias logs='dc logs -f --tail=1000'
 up(){ dc up -d "$@" && dc logs -f "$@" }
@@ -180,7 +180,7 @@ mkcd() {
     cd $1
 }
 
-f() {
+d() {
     dirs -v | tac
 }
 
