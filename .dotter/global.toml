@@ -84,3 +84,6 @@ pbincli = "~/.config/pbincli/pbincli.conf"
 
 [xournalpp.files]
 xournalpp = "~/.config/xournalpp"
+
+[ssh.files]
+ssh = "~/.ssh/config"
