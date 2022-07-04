@@ -86,4 +86,4 @@ pbincli = "~/.config/pbincli/pbincli.conf"
 xournalpp = "~/.config/xournalpp"
 
 [ssh.files]
-ssh = "~/.ssh/config"
+ssh = { target = "~/.ssh/config", type = "symbolic", if = "enc" }
