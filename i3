@@ -314,6 +314,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 -time 100 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 -time 100 # decrease screen brightness
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 1 -time 20 # increase screen brightness
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 1 -time 20 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec $HOME/scripts/toggletouchpad.sh # toggle touchpad
