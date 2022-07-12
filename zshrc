@@ -91,6 +91,8 @@ alias dotter='./dotter -v'
 alias diff='git diff --no-index'
 alias flake8='flake8 --count --statistics --show-source'
 alias mitm='REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt proxychains -q'
+alias sshx='ssh -o UserKnownHostsFile=/dev/null'
+alias sftpx='sftp -o UserKnownHostsFile=/dev/null'
 
 alias dk='sudo docker'
 alias dc='sudo docker-compose'
