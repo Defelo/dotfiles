@@ -111,6 +111,21 @@ alias -s md=vim
 
 [[ -f ~/.zshrc.enc ]] && . ~/.zshrc.enc
 
+bsetup() {
+    id=$(borg config $1 id)
+    export BORG_PASSCOMMAND="pass show Borg/$id"
+    export BORG_REPO="$1"
+}
+
+bmnt() {
+    d=$(mktemp -d)
+    borg mount -o ignore_permissions :: $d
+    cd $d
+    zsh
+    cd - > /dev/null
+    borg umount $d
+}
+
 bprune() {
     borg prune -v --list --stats --keep-daily=2 --keep-weekly=2 --keep-monthly=2 $1 && borg compact --progress $1
 }
@@ -124,11 +139,6 @@ vz() { vim ~/.zshrc; source ~/.zshrc }
 # neofetch() {
 #     cat ~/.neofetch | sed s/sh/zsh/ | sed s/crond/st/
 # }
-
-bmnt() {
-    borg mount -o ignore_permissions $1 $2
-    cd $2
-}
 
 venv() {
     virtualenv .venv
