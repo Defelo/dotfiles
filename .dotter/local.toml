@@ -16,6 +16,10 @@ packages = [
 [variables]
 enc = false
 
+# zsh
+[variables.zsh]
+temptex = true
+
 # vim
 [variables.vim.plugins]
 airline = true

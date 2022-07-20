@@ -19,6 +19,7 @@ depends = ["profile"]
 [zsh.files]
 zshrc = "~/.zshrc"
 "zshrc.enc" = { target = "~/.zshrc.enc", type = "template", if = "enc" }
+"template.tex" = { target = "~/.template.tex", type = "symbolic", if = "zsh.temptex" }
 
 [p10k]
 depends = ["zsh"]
