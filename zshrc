@@ -112,12 +112,15 @@ alias -s md=vim
 [[ -f ~/.zshrc.enc ]] && . ~/.zshrc.enc
 
 bsetup() {
-    if ! id=$(borg config "$1" id 2> /dev/null); then
-        id=$(ssh $(cut -d: -f1 <<< "$1") borg config $(cut -d: -f2- <<< "$1") id)
+    f="$1"
+    if ! id=$(borg config "$f" id 2> /dev/null); then
+        id=$(ssh $(cut -d: -f1 <<< "$f") borg config $(cut -d: -f2- <<< "$f") id)
+    else
+        f=$(realpath "$f")
     fi
-    echo "$id $1"
+    echo "$id $f"
     export BORG_PASSCOMMAND="pass show Borg/$id"
-    export BORG_REPO="$1"
+    export BORG_REPO="$f"
 }
 
 bmnt() {
