@@ -23,6 +23,7 @@ temptex = true
 # vim
 [variables.vim.plugins]
 airline = true
+nginx = true
 vimtex = true
 vim-nix = true
 vim-svelte = true

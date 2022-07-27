@@ -5,6 +5,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 {{/if}}
 
+{{#if vim.plugins.nginx}}
+Plug 'chr4/nginx.vim'
+{{/if}}
+
 {{#if vim.plugins.vimtex}}
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
