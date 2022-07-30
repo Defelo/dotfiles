@@ -97,7 +97,7 @@ scroll-down = i3wm-wsnext
 ;modules-left = arch workspaces 
 ;modules-right = mpd pkg volume battery network date powermenu
 modules-left = workspaces window scratch
-modules-right = {{#if polybar.modules.screenshot}}screenshot{{/if}} {{#if polybar.modules.rofi}}rofi{{/if}} yk {{#if polybar.modules.updates}}updates{{/if}} mem swap cpu dunst volume webcam battery network date
+modules-right = {{#if polybar.modules.screenshot}}screenshot{{/if}} {{#if polybar.modules.rofi}}rofi{{/if}} yk {{#if polybar.modules.updates}}updates{{/if}} mem swap cpu dunst volume webcam battery {{#if enc}}btpower{{/if}} network date
  
 ;== Modules ========================================================
 
@@ -273,6 +273,13 @@ animation-charging-3 = ""
 animation-charging-4 = ""
 
 animation-charging-framerate = 750
+
+{{#if enc}}
+[module/btpower]
+type = custom/script
+exec = bash ~/scripts/btpower.sh
+interval=10
+{{/if}}
 
 [module/volume]
 type = internal/pulseaudio
